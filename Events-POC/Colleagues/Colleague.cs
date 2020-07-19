@@ -1,4 +1,6 @@
-﻿namespace Events_POC
+﻿using Events_POC.Mediator;
+
+namespace Events_POC.Colleagues
 {
     public abstract class Colleague
     {

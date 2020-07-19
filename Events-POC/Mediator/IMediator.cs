@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Events_POC.Colleagues;
+using Events_POC.Events;
 
-namespace Events_POC
+namespace Events_POC.Mediator
 {
     public interface IMediator
     {

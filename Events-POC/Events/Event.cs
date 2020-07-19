@@ -1,4 +1,6 @@
-﻿namespace Events_POC
+﻿using Events_POC.Colleagues;
+
+namespace Events_POC.Events
 {
     public abstract class Event
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Events_POC.Colleagues;
+using Events_POC.Events;
 
-namespace Events_POC
+namespace Events_POC.Mediator
 {
     public class MessageMediator : IMediator
     {

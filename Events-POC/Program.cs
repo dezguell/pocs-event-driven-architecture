@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Events_POC.Colleagues;
+using Events_POC.Mediator;
 
 namespace Events_POC
 {
