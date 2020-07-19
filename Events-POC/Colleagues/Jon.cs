@@ -1,4 +1,5 @@
-﻿using Events_POC.Events;
+﻿using System.Collections.Generic;
+using Events_POC.Events;
 using Events_POC.Mediator;
 
 namespace Events_POC.Colleagues
@@ -7,12 +8,11 @@ namespace Events_POC.Colleagues
     {
         public Jon(IMediator mediator) : base(mediator)
         {
-        }
-
-        public override void SendMessage(string message)
-        {
-            this.message = message;
-            this.mediator.Interact(new SendMessageEvent(this));
+            mediator.Subscribe(new KeyValuePair<Colleague, Event[]>(this, new Event[]
+            {
+                new SendMessageEvent(this),
+                new SendFriendRequestEvent(this,null),
+            }));
         }
     }
 }

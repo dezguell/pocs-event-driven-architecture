@@ -6,8 +6,11 @@ namespace Events_POC.Mediator
 {
     public interface IMediator
     {
-        void Subscribe(Colleague colleagueA);
-        void Interact(Event @event);
+        void Subscribe(KeyValuePair<Colleague, Event[]> colleagueA);
+        void Interact(SendMessageEvent @event);
+        void Interact(SendFriendRequestEvent @event);
+        void Interact(AnswerFriendRequest @event);
         IEnumerable<Colleague> GetColleagues();
+        
     }
 }
