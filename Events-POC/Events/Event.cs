@@ -1,20 +1,19 @@
-﻿using Events_POC.Colleagues;
+﻿using Events_POC.Services;
 
 namespace Events_POC.Events
 {
     public abstract class Event
     {
-        protected Colleague colleague;
+        protected Service service;
 
-        protected Event(Colleague colleague)
+        protected Event(Service service)
         {
-            this.colleague = colleague;
+            this.service = service;
         }
 
-        public Colleague GetColleague()
+        public Service GetService()
         {
-            return this.colleague;
+            return this.service;
         }
-
     }
 }

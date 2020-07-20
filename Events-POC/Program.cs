@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using Events_POC.Colleagues;
 using Events_POC.Events;
 using Events_POC.Mediator;
+using Events_POC.Services;
 
 namespace Events_POC
 {
     class Program
     {
-        private static IMediator mediator = new MessageMediator();
-        private static Colleague jon = new Jon(mediator);
-        private static Colleague peter = new Peter(mediator);
-        private static Colleague ema = new Ema(mediator);
+        private static IMediator mediator = new ServicesMediator();
+        private static Service asset = new AssetService(mediator);
+        private static Service gl = new GeneralLagerService(mediator);
+        private static Service book = new BookService(mediator);
 
         static void Main(string[] args)
         {
             SendMessages();
-            SendFriendRequest();
+            SendInteractionRequest();
 
             Console.ReadKey();
         }
@@ -32,17 +32,17 @@ namespace Events_POC
             }
         }
 
-        private static void SendFriendRequest()
+        private static void SendInteractionRequest()
         {
             Console.WriteLine("Sending Friend Requests : ");
             Console.WriteLine(" -- From Ema to Jon: ");
-            ema.SendFriendRequestTo(jon);
+            book.SendInteractionRequestTo(asset);
 
             Console.WriteLine(" -- From Jon to Peter: ");
-            jon.SendFriendRequestTo(peter);
+            asset.SendInteractionRequestTo(gl);
 
             Console.WriteLine(" -- From Peter to Ema: ");
-            peter.SendFriendRequestTo(ema);
+            gl.SendInteractionRequestTo(book);
             Console.WriteLine("-----------------------");
         }
     }

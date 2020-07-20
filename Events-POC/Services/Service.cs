@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using Events_POC.Events;
 using Events_POC.Mediator;
 
-namespace Events_POC.Colleagues
+namespace Events_POC.Services
 {
-    public abstract class Colleague
+    public abstract class Service
     {
         protected IMediator mediator;
         protected string message;
-        protected List<Colleague> Friends;
+        protected List<Service> Friends;
 
-        protected Colleague(IMediator mediator)
+        protected Service(IMediator mediator)
         {
             this.mediator = mediator;
         }
@@ -27,19 +27,19 @@ namespace Events_POC.Colleagues
             this.mediator.Interact(new SendMessageEvent(this));
         }
 
-        public void SendFriendRequestTo(Colleague colleagueTo)
+        public void SendInteractionRequestTo(Service colleagueTo)
         {
-            mediator.Interact(new SendFriendRequestEvent(this, colleagueTo));
+            mediator.Interact(new SendInteractionRequestEvent(this, colleagueTo));
         }
 
-        public void AnswerFriendRequestFrom(Colleague colleagueFrom)
+        public void AnswerFriendRequestFrom(Service colleagueFrom)
         {
-            this.mediator.Interact(new AnswerFriendRequestEvent(this, colleagueFrom, true));
+            this.mediator.Interact(new AnswerInteractionRequestEvent(this, colleagueFrom, true));
         }
 
         public void React(SendMessageEvent @event)
         {
-            var colleague = @event.GetColleague();
+            var colleague = @event.GetService();
             Console.WriteLine(" ---- " +
                               $"{this.GetType().Name} " +
                               $"was notified of: {@event.GetType().Name} " +
@@ -47,17 +47,17 @@ namespace Events_POC.Colleagues
                               $"with content: {colleague.GetMessage()}\n");
         }
 
-        public void React(SendFriendRequestEvent @event)
+        public void React(SendInteractionRequestEvent @event)
         {
             Console.WriteLine(" ---- " +
                               $"{this.GetType().Name} " +
                               $"was notified of: {@event.GetType().Name} " +
-                              $"from: {@event.GetColleague().GetType().Name}\n");
+                              $"from: {@event.GetService().GetType().Name}\n");
 
-            mediator.Interact(new AnswerFriendRequestEvent(this,@event.GetColleague(),true));
+            mediator.Interact(new AnswerInteractionRequestEvent(this, @event.GetService(), true));
         }
 
-        public void React(AnswerFriendRequestEvent @event)
+        public void React(AnswerInteractionRequestEvent @event)
         {
             Console.WriteLine(" ---- " +
                               $"{@event.GetColleagueFrom().GetType().Name} " +

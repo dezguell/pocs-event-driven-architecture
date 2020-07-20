@@ -1,10 +1,10 @@
-﻿using Events_POC.Colleagues;
+﻿using Events_POC.Services;
 
 namespace Events_POC.Events
 {
     public class SendMessageEvent : Event
     {
-        public SendMessageEvent(Colleague colleague) : base(colleague)
+        public SendMessageEvent(Service colleague) : base(colleague)
         {
         }
     }
