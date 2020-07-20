@@ -2,12 +2,12 @@
 
 namespace Events_POC.Events
 {
-    public class AnswerFriendRequest : Event
+    public class AnswerFriendRequestEvent : Event
     {
         private Colleague colleagueFrom;
         private bool answer;
 
-        public AnswerFriendRequest(Colleague ema, Colleague colleagueFrom, bool answer) : base(ema)
+        public AnswerFriendRequestEvent(Colleague ema, Colleague colleagueFrom, bool answer) : base(ema)
         {
             this.colleagueFrom = colleagueFrom;
             this.answer = answer;

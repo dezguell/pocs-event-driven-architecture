@@ -8,22 +8,22 @@ namespace Events_POC.Mediator
 {
     public class MessageMediator : IMediator
     {
-        private readonly Dictionary<Colleague, Event[]> _observersContainer;
+        private readonly Dictionary<Colleague, Event[]> _coleagueContainer;
 
         public MessageMediator()
         {
-            _observersContainer = new Dictionary<Colleague, Event[]>();
+            _coleagueContainer = new Dictionary<Colleague, Event[]>();
         }
 
         public void Subscribe(KeyValuePair<Colleague, Event[]> colleague)
         {
-            if (!_observersContainer.ContainsKey(colleague.Key))
+            if (!_coleagueContainer.ContainsKey(colleague.Key))
             {
-                _observersContainer.Add(colleague.Key, colleague.Value);
+                _coleagueContainer.Add(colleague.Key, colleague.Value);
             }
             else
             {
-                _observersContainer[colleague.Key].ToList().AddRange(colleague.Value);
+                _coleagueContainer[colleague.Key].ToList().AddRange(colleague.Value);
             }
         }
 
@@ -31,17 +31,11 @@ namespace Events_POC.Mediator
         {
             var result = string.Empty;
             var eventColleague = @event.GetColleague();
-            foreach (var colleagueItem in _observersContainer)
+            foreach (var colleagueItem in _coleagueContainer)
             {
                 if (colleagueItem.Key != eventColleague)
-                    result += " ---- " +
-                              $"{colleagueItem.Key.GetType().Name} " +
-                              $"was notified of: {@event.GetType().Name} " +
-                              $"from: {eventColleague.GetType().Name} " +
-                              $"with content: {eventColleague.GetMessage()}\n";
+                    colleagueItem.Key.React(@event);
             }
-
-            Console.WriteLine(result);
         }
 
         public void Interact(SendFriendRequestEvent @event)
@@ -50,17 +44,12 @@ namespace Events_POC.Mediator
             var eventColleague = @event.GetColleague();
             var eventColleagueTo = @event.GetColleagueTo();
 
-            if (_observersContainer.ContainsKey(eventColleagueTo))
+            if (_coleagueContainer.ContainsKey(eventColleagueTo))
             {
-                if (_observersContainer[eventColleagueTo].Select(event1 => event1.GetType().Name)
+                if (_coleagueContainer[eventColleagueTo].Select(evnt => evnt.GetType().Name)
                     .Contains(@event.GetType().Name))
                 {
-                    Console.WriteLine(" ---- " +
-                              $"{eventColleagueTo.GetType().Name} " +
-                              $"was notified of: {@event.GetType().Name} " +
-                              $"from: {@event.GetColleagueTo().GetType().Name}");
-
-                    @event.GetColleagueTo().AnswerFriendRequestFrom(eventColleague);
+                    eventColleagueTo.React(@event);
                 }
                 else
                 {
@@ -68,26 +57,21 @@ namespace Events_POC.Mediator
                                       $"{eventColleagueTo.GetType().Name} " +
                                       $"wasn't notified of: {@event.GetType().Name} " +
                                       $"from: {@event.GetColleague().GetType().Name} " +
-                                      "because he/she is not subscribed for this event\n");
-                }
+                                      "because he/she is not subscribed for this event\n");                }
             }
 
         }
 
-        public void Interact(AnswerFriendRequest @event)
+        public void Interact(AnswerFriendRequestEvent @event)
         {
             var eventColleague = @event.GetColleague();
             var eventColleagueFrom = @event.GetColleagueFrom();
-            Console.WriteLine(" ---- " +
-                              $"{eventColleague.GetType().Name} " +
-                              $"answered with: '{@event.GetAnswer()}' " +
-                              $"to the: SendFriendRequestEvent" +
-                              $" from {eventColleagueFrom.GetType().Name}\n");
+            @event.GetColleague().React(@event);
         }
 
         public IEnumerable<Colleague> GetColleagues()
         {
-            return this._observersContainer.Keys;
+            return this._coleagueContainer.Keys;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Events_POC.Events;
 using Events_POC.Mediator;
 
@@ -33,7 +34,36 @@ namespace Events_POC.Colleagues
 
         public void AnswerFriendRequestFrom(Colleague colleagueFrom)
         {
-            this.mediator.Interact(new AnswerFriendRequest(this, colleagueFrom, true));
+            this.mediator.Interact(new AnswerFriendRequestEvent(this, colleagueFrom, true));
+        }
+
+        public void React(SendMessageEvent @event)
+        {
+            var colleague = @event.GetColleague();
+            Console.WriteLine(" ---- " +
+                              $"{this.GetType().Name} " +
+                              $"was notified of: {@event.GetType().Name} " +
+                              $"from: {colleague.GetType().Name} " +
+                              $"with content: {colleague.GetMessage()}\n");
+        }
+
+        public void React(SendFriendRequestEvent @event)
+        {
+            Console.WriteLine(" ---- " +
+                              $"{this.GetType().Name} " +
+                              $"was notified of: {@event.GetType().Name} " +
+                              $"from: {@event.GetColleague().GetType().Name}\n");
+
+            mediator.Interact(new AnswerFriendRequestEvent(this,@event.GetColleague(),true));
+        }
+
+        public void React(AnswerFriendRequestEvent @event)
+        {
+            Console.WriteLine(" ---- " +
+                              $"{@event.GetColleagueFrom().GetType().Name} " +
+                              $"was notified of: {@event.GetType().Name} " +
+                              $"from: {this.GetType().Name} " +
+                              $"whit the answer: {@event.GetAnswer()}\n");
         }
     }
 }

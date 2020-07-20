@@ -9,7 +9,7 @@ namespace Events_POC.Mediator
         void Subscribe(KeyValuePair<Colleague, Event[]> colleagueA);
         void Interact(SendMessageEvent @event);
         void Interact(SendFriendRequestEvent @event);
-        void Interact(AnswerFriendRequest @event);
+        void Interact(AnswerFriendRequestEvent @event);
         IEnumerable<Colleague> GetColleagues();
         
     }
