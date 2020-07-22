@@ -1,0 +1,12 @@
+C:\Work\Stuff\Events\Events-POC\DataImpor\bin\Debug\netstandard2.0\DataImport.deps.json
+C:\Work\Stuff\Events\Events-POC\DataImpor\bin\Debug\netstandard2.0\DataImport.dll
+C:\Work\Stuff\Events\Events-POC\DataImpor\bin\Debug\netstandard2.0\DataImport.pdb
+C:\Work\Stuff\Events\Events-POC\DataImpor\bin\Debug\netstandard2.0\Common.dll
+C:\Work\Stuff\Events\Events-POC\DataImpor\bin\Debug\netstandard2.0\Common.pdb
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.csprojAssemblyReference.cache
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.AssemblyInfoInputs.cache
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.AssemblyInfo.cs
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.CoreCompileInputs.cache
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.CopyComplete
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.dll
+C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.pdb

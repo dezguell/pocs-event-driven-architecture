@@ -7,14 +7,55 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "Events-POC/1.0.0": {
+        "dependencies": {
+          "Asset": "1.0.0",
+          "Common": "1.0.0",
+          "DataImport": "1.0.0"
+        },
         "runtime": {
           "Events-POC.dll": {}
+        }
+      },
+      "Asset/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "Asset.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
+      },
+      "DataImport/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "DataImport.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Events-POC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Asset/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataImport/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

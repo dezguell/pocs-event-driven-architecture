@@ -4,6 +4,191 @@
     "C:\\Work\\Stuff\\Events\\Events-POC\\Events-POC\\Events-POC.csproj": {}
   },
   "projects": {
+    "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj",
+        "projectName": "Asset",
+        "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj",
+        "packagesPath": "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Carlos Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://bnasoftware.pkgs.visualstudio.com/_packaging/btaxdev/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
+                "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Carlos Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://bnasoftware.pkgs.visualstudio.com/_packaging/btaxdev/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj",
+        "projectName": "DataImport",
+        "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj",
+        "packagesPath": "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Carlos Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://bnasoftware.pkgs.visualstudio.com/_packaging/btaxdev/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
+                "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Work\\Stuff\\Events\\Events-POC\\Events-POC\\Events-POC.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -30,7 +215,17 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj": {
+                "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj"
+              },
+              "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
+                "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"
+              },
+              "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj": {
+                "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
