@@ -11,3 +11,10 @@ C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.cs
 C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.dll
 C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.pdb
 C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.genruntimeconfig.cache
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Asset.dll
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Common.dll
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Asset.pdb
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.csproj.CopyComplete
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\DataImport.dll
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\DataImport.pdb

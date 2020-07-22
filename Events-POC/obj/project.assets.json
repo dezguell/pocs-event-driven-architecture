@@ -1,11 +1,68 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Asset/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Asset.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Asset.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "DataImport/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataImport.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataImport.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Asset/1.0.0": {
+      "type": "project",
+      "path": "../Asset/Asset.csproj",
+      "msbuildProject": "../Asset/Asset.csproj"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
+    "DataImport/1.0.0": {
+      "type": "project",
+      "path": "../DataImpor/DataImport.csproj",
+      "msbuildProject": "../DataImpor/DataImport.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Asset >= 1.0.0",
+      "Common >= 1.0.0",
+      "DataImport >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\": {},
@@ -37,7 +94,17 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj": {
+              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj"
+            },
+            "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
+              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"
+            },
+            "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj": {
+              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

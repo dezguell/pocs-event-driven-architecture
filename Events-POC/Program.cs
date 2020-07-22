@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using Events_POC.Colleagues;
-using Events_POC.Events;
-using Events_POC.Mediator;
+using Asset;
+using Common;
+using DataImport;
 
 namespace Events_POC
 {
     class Program
     {
-        private static IMediator mediator = new MessageMediator();
-        private static Colleague jon = new Jon(mediator);
-        private static Colleague peter = new Peter(mediator);
-        private static Colleague ema = new Ema(mediator);
+        private static IMediator mediator = new ServicesMediator();
+        private static AssetService asset = new AssetService(mediator);
+        private static DataImportService DataImport = new DataImportService(mediator);
+        
 
         static void Main(string[] args)
         {
             SendMessages();
-            SendFriendRequest();
-
+            SendInteractionRequest();
             Console.ReadKey();
         }
 
@@ -32,18 +30,10 @@ namespace Events_POC
             }
         }
 
-        private static void SendFriendRequest()
+        private static void SendInteractionRequest()
         {
-            Console.WriteLine("Sending Friend Requests : ");
-            Console.WriteLine(" -- From Ema to Jon: ");
-            ema.SendFriendRequestTo(jon);
-
-            Console.WriteLine(" -- From Jon to Peter: ");
-            jon.SendFriendRequestTo(peter);
-
-            Console.WriteLine(" -- From Peter to Ema: ");
-            peter.SendFriendRequestTo(ema);
-            Console.WriteLine("-----------------------");
+            Console.WriteLine("Sending assetCreation Requests : ");
+            DataImport.SendAssetCreationRequest();
         }
     }
 }
