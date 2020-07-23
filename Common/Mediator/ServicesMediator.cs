@@ -27,13 +27,14 @@ namespace Common.Mediator
 
         public void Interact(Event @event)
         {
-            foreach (var colleague in _serviceContainer)
+            var servicesSubscribedToEvent = _serviceContainer
+                .Where(colleague => colleague.Value
+                    .Select(evnt => evnt.GetType().Name)
+                    .Contains(@event.GetType().Name) && colleague.Key != @event.GetService());
+            
+            foreach (var service in servicesSubscribedToEvent)
             {
-                if (colleague.Value.Select(evnt => evnt.GetType().Name)
-                    .Contains(@event.GetType().Name) && colleague.Key != @event.GetService())
-                {
-                    colleague.Key.ReactTo(@event);
-                }
+                service.Key.ReactTo(@event);
             }
         }
 

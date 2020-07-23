@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book", "Book\Book.csproj", "{B763B104-4F61-4796-8D02-619D805B8AFF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local", "Local", "{E90AF53C-C921-45AC-837C-69AC92467D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7555109-3E67-4E20-9063-AA2ADE8B111D} = {E90AF53C-C921-45AC-837C-69AC92467D4E}
+		{31229EE9-CBA9-4F19-99BC-3E6C2FB4B975} = {E90AF53C-C921-45AC-837C-69AC92467D4E}
+		{77BABC5D-2A23-4F5D-8E3A-FAFBB749887F} = {E90AF53C-C921-45AC-837C-69AC92467D4E}
+		{B763B104-4F61-4796-8D02-619D805B8AFF} = {E90AF53C-C921-45AC-837C-69AC92467D4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7860F5C0-3E42-4581-B631-9F79A539E995}

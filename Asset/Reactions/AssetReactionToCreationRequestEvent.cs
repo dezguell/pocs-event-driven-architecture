@@ -22,7 +22,7 @@ namespace Asset.Reactions
                  ID: {asset._id}
                  Type: {asset._assettype}
                  Cost: {asset._cost}
-     this action was requested by: {@event.GetService().GetType().Name} ");
+      this action was requested by: {@event.GetService().GetType().Name} ");
 
             this.service.Interact(new AssetCreationResponseEvent(this.service));
         }
