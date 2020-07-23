@@ -7,6 +7,6 @@ namespace Common.Mediator
     {
         void Subscribe(KeyValuePair<Service.Service, Event[]> colleague);
         void Interact(Event @event);
-        IEnumerable<Service.Service> GetColleagues();
+        IEnumerable<Service.Service> GetServices();
     }
 }

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Common;
 using Common.Events;
 using Common.Mediator;
+using Common.Models;
 using Common.Reaction;
 using Common.Service;
 using DataImport.Reactions;
@@ -29,11 +31,13 @@ namespace DataImport
             };
         }
 
-        public void SendAssetCreationRequest()
+        public void SendAssetCreationRequest(Guid id, string assettypevalue, int cost)
         {
             // create asset logic 
-
-            mediator.Interact(new AssetCreationRequestEvent(this));
+            var asset = new Asset(id,assettypevalue,cost);
+            
+            //Interaction with the mediator exposing the asset creation envent
+            mediator.Interact(new AssetCreationRequestEvent(this,asset));
         }
     }
 }

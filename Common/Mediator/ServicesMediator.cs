@@ -37,7 +37,7 @@ namespace Common.Mediator
             }
         }
 
-        public IEnumerable<Service.Service> GetColleagues()
+        public IEnumerable<Service.Service> GetServices()
         {
             return this._serviceContainer.Keys;
         }
