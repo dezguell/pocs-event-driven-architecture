@@ -2,7 +2,7 @@
 {
     public class AssetCreationResponseEvent : Event
     {
-        public AssetCreationResponseEvent(Service service) : base(service)
+        public AssetCreationResponseEvent(Service.Service service) : base(service)
         {
         }
     }

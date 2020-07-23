@@ -2,14 +2,14 @@
 {
     public abstract class Event
     {
-        protected Service service;
+        protected Service.Service service;
 
-        protected Event(Service service)
+        protected Event(Service.Service service)
         {
             this.service = service;
         }
 
-        public Service GetService()
+        public Service.Service GetService()
         {
             return this.service;
         }

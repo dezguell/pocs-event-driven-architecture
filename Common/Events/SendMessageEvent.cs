@@ -2,7 +2,7 @@
 {
     public class SendMessageEvent : Event
     {
-        public SendMessageEvent(Service colleague) : base(colleague)
+        public SendMessageEvent(Service.Service colleague) : base(colleague)
         {
         }
     }

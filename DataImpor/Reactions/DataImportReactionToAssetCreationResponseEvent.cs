@@ -1,19 +1,21 @@
 ﻿using System;
 using Common;
 using Common.Events;
+using Common.Reaction;
+using Common.Service;
 
 namespace DataImport.Reactions
 {
-    public class AssetCreationResponseEventReaction : Reaction
+    public class DataImportReactionToAssetCreationResponseEvent : Reaction
     {
-        public AssetCreationResponseEventReaction(Service service) : base(service)
+        public DataImportReactionToAssetCreationResponseEvent(Service service) : base(service)
         {
         }
 
         public override void ReactTo(Event @event)
         {
             Console.WriteLine(" ---- " +
-                              $"{this.service.GetType().Name}: Notification of asset creation...  " +
+                              $"{this.service.GetType().Name}: Notification of a asset creation...  " +
                               $"this action was perform by: {@event.GetService().GetType().Name} ");
         }
     }

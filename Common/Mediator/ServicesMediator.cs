@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Common.Events;
 
-namespace Common
+namespace Common.Mediator
 {
     public class ServicesMediator : IMediator
     {
-        private readonly Dictionary<Service, Event[]> _serviceContainer;
+        private readonly Dictionary<Service.Service, Event[]> _serviceContainer;
 
         public ServicesMediator()
         {
-            _serviceContainer = new Dictionary<Service, Event[]>();
+            _serviceContainer = new Dictionary<Service.Service, Event[]>();
         }
 
-        public void Subscribe(KeyValuePair<Service, Event[]> service)
+        public void Subscribe(KeyValuePair<Service.Service, Event[]> service)
         {
             if (!_serviceContainer.ContainsKey(service.Key))
             {
@@ -38,7 +37,7 @@ namespace Common
             }
         }
 
-        public IEnumerable<Service> GetColleagues()
+        public IEnumerable<Service.Service> GetColleagues()
         {
             return this._serviceContainer.Keys;
         }

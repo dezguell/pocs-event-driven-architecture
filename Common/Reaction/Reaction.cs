@@ -1,12 +1,12 @@
 ﻿using Common.Events;
 
-namespace Common
+namespace Common.Reaction
 {
     public abstract class Reaction
     {
-        protected Service service;
+        protected Service.Service service;
 
-        protected Reaction(Service service)
+        protected Reaction(Service.Service service)
         {
             this.service = service;
         }

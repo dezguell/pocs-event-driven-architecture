@@ -1,12 +1,14 @@
 ﻿using System;
 using Common;
 using Common.Events;
+using Common.Reaction;
+using Common.Service;
 
 namespace DataImport.Reactions
 {
-    public class SendMessageEventEventReaction : Reaction
+    public class DataImportReactionToSendMessageEvent : Reaction
     {
-        public SendMessageEventEventReaction(Service service) : base(service)
+        public DataImportReactionToSendMessageEvent(Service service) : base(service)
         {
         }
 
@@ -20,6 +22,6 @@ namespace DataImport.Reactions
                               $"with content: {colleague.GetMessage()}\n");
         }
 
-       
+
     }
 }

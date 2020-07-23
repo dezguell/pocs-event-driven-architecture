@@ -1,14 +1,17 @@
 ﻿using System;
-using Common;
 using Common.Events;
+using Common.Reaction;
+using Common.Service;
 
-namespace Asset.Reactions
+namespace Book.Reactions
 {
-    public class SendMessageEventEventReaction : Reaction
+    public class BookReactionToSendEvent : Reaction
     {
-        public SendMessageEventEventReaction(Service service) : base(service)
+        public BookReactionToSendEvent(Service service) : base(service)
         {
+
         }
+
         public override void ReactTo(Event @event)
         {
             var colleague = @event.GetService();

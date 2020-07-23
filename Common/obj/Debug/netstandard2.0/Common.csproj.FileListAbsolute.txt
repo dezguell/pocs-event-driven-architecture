@@ -1,4 +1,3 @@
-C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache

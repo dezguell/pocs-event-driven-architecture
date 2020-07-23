@@ -2,6 +2,9 @@
 using System.Linq;
 using Common;
 using Common.Events;
+using Common.Mediator;
+using Common.Reaction;
+using Common.Service;
 using DataImport.Reactions;
 
 namespace DataImport
@@ -14,12 +17,15 @@ namespace DataImport
             {
                 new SendMessageEvent(this),
                 new AssetCreationResponseEvent(this),
+                new SaveAssetActionCompleteEvent(this), 
             }));
 
             this.EventReactionRegistry = new List<EventReaction>()
             {
-                new EventReaction() { Event = new AssetCreationResponseEvent(this), Reaction = new AssetCreationResponseEventReaction(this)},
-                new EventReaction {Event = new SendMessageEvent(this), Reaction = new SendMessageEventEventReaction(this)}
+                new EventReaction { Event = new AssetCreationResponseEvent(this), Reaction = new DataImportReactionToAssetCreationResponseEvent(this)},
+                new EventReaction {Event = new SendMessageEvent(this), Reaction = new DataImportReactionToSendMessageEvent(this)},
+                new EventReaction {Event = new SaveAssetActionCompleteEvent(this),Reaction = new DataImportReactionToSaveAssetActionCompleteEvent(this)}
+
             };
         }
 

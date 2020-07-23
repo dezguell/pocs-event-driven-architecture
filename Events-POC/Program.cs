@@ -1,6 +1,8 @@
 ﻿using System;
 using Asset;
+using Book;
 using Common;
+using Common.Mediator;
 using DataImport;
 
 namespace Events_POC
@@ -8,9 +10,10 @@ namespace Events_POC
     class Program
     {
         private static IMediator mediator = new ServicesMediator();
-        private static AssetService asset = new AssetService(mediator);
+        private static AssetService AsetService = new AssetService(mediator);
+        private static BookService BookService = new BookService(mediator);
         private static DataImportService DataImport = new DataImportService(mediator);
-        
+
 
         static void Main(string[] args)
         {

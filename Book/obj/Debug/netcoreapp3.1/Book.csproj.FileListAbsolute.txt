@@ -1,0 +1,12 @@
+C:\Work\Stuff\Events\Events-POC\Book\bin\Debug\netcoreapp3.1\Book.deps.json
+C:\Work\Stuff\Events\Events-POC\Book\bin\Debug\netcoreapp3.1\Book.dll
+C:\Work\Stuff\Events\Events-POC\Book\bin\Debug\netcoreapp3.1\Book.pdb
+C:\Work\Stuff\Events\Events-POC\Book\bin\Debug\netcoreapp3.1\Common.dll
+C:\Work\Stuff\Events\Events-POC\Book\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.csprojAssemblyReference.cache
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.AssemblyInfoInputs.cache
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.AssemblyInfo.cs
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.csproj.CoreCompileInputs.cache
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.csproj.CopyComplete
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.dll
+C:\Work\Stuff\Events\Events-POC\Book\obj\Debug\netcoreapp3.1\Book.pdb

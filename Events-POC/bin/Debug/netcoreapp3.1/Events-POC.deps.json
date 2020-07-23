@@ -9,6 +9,7 @@
       "Events-POC/1.0.0": {
         "dependencies": {
           "Asset": "1.0.0",
+          "Book": "1.0.0",
           "Common": "1.0.0",
           "DataImport": "1.0.0"
         },
@@ -22,6 +23,14 @@
         },
         "runtime": {
           "Asset.dll": {}
+        }
+      },
+      "Book/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "Book.dll": {}
         }
       },
       "Common/1.0.0": {
@@ -46,6 +55,11 @@
       "sha512": ""
     },
     "Asset/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Book/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

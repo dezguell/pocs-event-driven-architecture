@@ -15,6 +15,19 @@
           "bin/placeholder/Asset.dll": {}
         }
       },
+      "Book/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Book.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Book.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -46,6 +59,11 @@
       "path": "../Asset/Asset.csproj",
       "msbuildProject": "../Asset/Asset.csproj"
     },
+    "Book/1.0.0": {
+      "type": "project",
+      "path": "../Book/Book.csproj",
+      "msbuildProject": "../Book/Book.csproj"
+    },
     "Common/1.0.0": {
       "type": "project",
       "path": "../Common/Common.csproj",
@@ -60,6 +78,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Asset >= 1.0.0",
+      "Book >= 1.0.0",
       "Common >= 1.0.0",
       "DataImport >= 1.0.0"
     ]
@@ -97,6 +116,9 @@
           "projectReferences": {
             "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj": {
               "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj"
+            },
+            "C:\\Work\\Stuff\\Events\\Events-POC\\Book\\Book.csproj": {
+              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Book\\Book.csproj"
             },
             "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
               "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"

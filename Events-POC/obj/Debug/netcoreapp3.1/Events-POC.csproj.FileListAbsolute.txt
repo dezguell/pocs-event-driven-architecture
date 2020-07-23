@@ -18,3 +18,5 @@ C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Common.pdb
 C:\Work\Stuff\Events\Events-POC\Events-POC\obj\Debug\netcoreapp3.1\Events-POC.csproj.CopyComplete
 C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\DataImport.dll
 C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\DataImport.pdb
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Book.dll
+C:\Work\Stuff\Events\Events-POC\Events-POC\bin\Debug\netcoreapp3.1\Book.pdb
