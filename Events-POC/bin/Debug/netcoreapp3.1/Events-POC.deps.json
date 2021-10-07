@@ -11,7 +11,8 @@
           "Asset": "1.0.0",
           "Book": "1.0.0",
           "Common": "1.0.0",
-          "DataImport": "1.0.0"
+          "DataImport": "1.0.0",
+          "LocalMediator": "1.0.0"
         },
         "runtime": {
           "Events-POC.dll": {}
@@ -45,6 +46,14 @@
         "runtime": {
           "DataImport.dll": {}
         }
+      },
+      "LocalMediator/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "runtime": {
+          "LocalMediator.dll": {}
+        }
       }
     }
   },
@@ -70,6 +79,11 @@
       "sha512": ""
     },
     "DataImport/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LocalMediator/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

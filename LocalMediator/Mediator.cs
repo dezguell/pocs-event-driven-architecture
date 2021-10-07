@@ -1,19 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using Common.Events;
+using Common.Mediator;
+using Common.Service;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using Common.Events;
 
-namespace Common.Mediator
+namespace LocalMediator
 {
-    public class ServicesMediator : IMediator
+    public class Mediator : IMediator
     {
-        private readonly Dictionary<Service.Service, Event[]> _serviceContainer;
+        private readonly Dictionary<Service, Event[]> _serviceContainer;
 
-        public ServicesMediator()
+        public Mediator()
         {
-            _serviceContainer = new Dictionary<Service.Service, Event[]>();
+            _serviceContainer = new Dictionary<Service, Event[]>();
         }
 
-        public void Subscribe(KeyValuePair<Service.Service, Event[]> service)
+        public void Subscribe(KeyValuePair<Service, Event[]> service)
         {
             if (!_serviceContainer.ContainsKey(service.Key))
             {
@@ -31,14 +34,14 @@ namespace Common.Mediator
                 .Where(colleague => colleague.Value
                     .Select(evnt => evnt.GetType().Name)
                     .Contains(@event.GetType().Name) && colleague.Key != @event.GetService());
-            
+
             foreach (var service in servicesSubscribedToEvent)
             {
                 service.Key.ReactTo(@event);
             }
         }
 
-        public IEnumerable<Service.Service> GetServices()
+        public IEnumerable<Service> GetServices()
         {
             return this._serviceContainer.Keys;
         }

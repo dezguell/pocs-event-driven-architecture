@@ -7,3 +7,13 @@ C:\Work\Stuff\Events\Events-POC\Common\bin\Debug\netstandard2.0\Common.pdb
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.dll
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.pdb
 C:\Work\Stuff\Events\Events-POC\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\bin\Debug\netstandard2.0\Common.deps.json
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\bin\Debug\netstandard2.0\Common.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Common\obj\Debug\netstandard2.0\Common.csproj.AssemblyReference.cache

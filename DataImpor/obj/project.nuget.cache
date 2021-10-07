@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F8aziWyQAG77yQ6e9yzoeRYtTs5LKXeRgOpZ5TwyxHAP6Z6U/S1QIy2H/w73a5XnlPeYRWBMldLnE4wWcfAg2w==",
+  "dgSpecHash": "ndm4VcoggIIHNCG/h7iq45+cV1pWlh9q6bkBgwaSq3JumbRgcLRJxulrVefwQqd8be2t8TeceIuxXs7XWoB67w==",
   "success": true,
-  "projectFilePath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj",
+  "projectFilePath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\DataImpor\\DataImport.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []

@@ -1,6 +1,6 @@
 ﻿using Common.Models;
 
-namespace Common.Events
+namespace Common.Events.EventBox
 {
     public class AssetCreationRequestEvent : Event
     {

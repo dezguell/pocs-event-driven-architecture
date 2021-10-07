@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Book.Reactions;
 using Common.Events;
+using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
 using Common.Service;

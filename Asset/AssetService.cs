@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Asset.Reactions;
-using Common;
+﻿using Asset.Reactions;
 using Common.Events;
+using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
 using Common.Service;
+using System.Collections.Generic;
 
 namespace Asset
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Common.Events;
+using Common.Events.EventBox;
 using Common.Reaction;
 using Common.Service;
 

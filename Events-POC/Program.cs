@@ -1,16 +1,16 @@
-﻿using System;
-using Asset;
+﻿using Asset;
 using Book;
-using Common;
 using Common.Mediator;
 using DataImport;
+using LocalMediator;
+using System;
 
 namespace Events_POC
 {
     class Program
     {
         // Starting Services 
-        private static IMediator mediator = new ServicesMediator();
+        private static IMediator mediator = new Mediator();
         private static AssetService AsetService = new AssetService(mediator);
         private static BookService BookService = new BookService(mediator);
         private static DataImportService DataImport = new DataImportService(mediator);

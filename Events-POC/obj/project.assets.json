@@ -50,6 +50,19 @@
         "runtime": {
           "bin/placeholder/DataImport.dll": {}
         }
+      },
+      "LocalMediator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LocalMediator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LocalMediator.dll": {}
+        }
       }
     }
   },
@@ -73,6 +86,11 @@
       "type": "project",
       "path": "../DataImpor/DataImport.csproj",
       "msbuildProject": "../DataImpor/DataImport.csproj"
+    },
+    "LocalMediator/1.0.0": {
+      "type": "project",
+      "path": "../LocalMediator/LocalMediator.csproj",
+      "msbuildProject": "../LocalMediator/LocalMediator.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -80,27 +98,28 @@
       "Asset >= 1.0.0",
       "Book >= 1.0.0",
       "Common >= 1.0.0",
-      "DataImport >= 1.0.0"
+      "DataImport >= 1.0.0",
+      "LocalMediator >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\": {},
+    "C:\\Users\\dezgu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\Stuff\\Events\\Events-POC\\Events-POC\\Events-POC.csproj",
+      "projectUniqueName": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Events-POC\\Events-POC.csproj",
       "projectName": "Events-POC",
-      "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Events-POC\\Events-POC.csproj",
-      "packagesPath": "C:\\Users\\Carlos Hernandez\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Events-POC\\obj\\",
+      "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Events-POC\\Events-POC.csproj",
+      "packagesPath": "C:\\Users\\dezgu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Events-POC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Carlos Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dezgu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -108,23 +127,26 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://bnasoftware.pkgs.visualstudio.com/_packaging/btaxdev/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj": {
-              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Asset\\Asset.csproj"
+            "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Asset\\Asset.csproj": {
+              "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Asset\\Asset.csproj"
             },
-            "C:\\Work\\Stuff\\Events\\Events-POC\\Book\\Book.csproj": {
-              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Book\\Book.csproj"
+            "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Book\\Book.csproj": {
+              "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Book\\Book.csproj"
             },
-            "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj": {
-              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\Common\\Common.csproj"
+            "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Common\\Common.csproj"
             },
-            "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj": {
-              "projectPath": "C:\\Work\\Stuff\\Events\\Events-POC\\DataImpor\\DataImport.csproj"
+            "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\DataImpor\\DataImport.csproj": {
+              "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\DataImpor\\DataImport.csproj"
+            },
+            "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\LocalMediator\\LocalMediator.csproj": {
+              "projectPath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\LocalMediator\\LocalMediator.csproj"
             }
           }
         }
@@ -137,6 +159,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -152,7 +175,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

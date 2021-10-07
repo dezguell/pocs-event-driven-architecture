@@ -10,3 +10,16 @@ C:\Work\Stuff\Events\Events-POC\Asset\bin\Debug\netstandard2.0\Common.pdb
 C:\Work\Stuff\Events\Events-POC\Asset\obj\Debug\netstandard2.0\Asset.csproj.CopyComplete
 C:\Work\Stuff\Events\Events-POC\Asset\obj\Debug\netstandard2.0\Asset.dll
 C:\Work\Stuff\Events\Events-POC\Asset\obj\Debug\netstandard2.0\Asset.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\bin\Debug\netstandard2.0\Asset.deps.json
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\bin\Debug\netstandard2.0\Asset.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\bin\Debug\netstandard2.0\Asset.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\bin\Debug\netstandard2.0\Common.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.csproj.AssemblyReference.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.AssemblyInfoInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.AssemblyInfo.cs
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.csproj.CoreCompileInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.csproj.CopyComplete
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\Asset\obj\Debug\netstandard2.0\Asset.pdb

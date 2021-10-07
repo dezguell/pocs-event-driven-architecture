@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7UucA0JkIHCTgYpeDELKklsBCNjm0UPAxq4AazORAbSummzOqFo2hiAMdv9g7+jHalXoaRsUIe68Ed3GLqYcHg==",
+  "dgSpecHash": "c9sAWA2q6M+qcyWeGfKFgu6PiZrLMpQn2qWN/BAaNA8ALEZojYSuJD77pm8EZQqUrfJQazIahjwd5gBqvZ7mhA==",
   "success": true,
-  "projectFilePath": "C:\\Work\\Stuff\\Events\\Events-POC\\Book\\Book.csproj",
+  "projectFilePath": "C:\\Users\\dezgu\\source\\repos\\work\\POC\\pocs-event-driven-architecture\\Book\\Book.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

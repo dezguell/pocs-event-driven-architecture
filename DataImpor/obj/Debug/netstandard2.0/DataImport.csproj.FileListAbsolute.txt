@@ -10,3 +10,16 @@ C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.cs
 C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.CopyComplete
 C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.dll
 C:\Work\Stuff\Events\Events-POC\DataImpor\obj\Debug\netstandard2.0\DataImport.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\bin\Debug\netstandard2.0\DataImport.deps.json
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\bin\Debug\netstandard2.0\DataImport.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\bin\Debug\netstandard2.0\DataImport.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\bin\Debug\netstandard2.0\Common.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\bin\Debug\netstandard2.0\Common.pdb
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.AssemblyReference.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.AssemblyInfoInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.AssemblyInfo.cs
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.CoreCompileInputs.cache
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.csproj.CopyComplete
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.dll
+C:\Users\dezgu\source\repos\work\POC\pocs-event-driven-architecture\DataImpor\obj\Debug\netstandard2.0\DataImport.pdb
