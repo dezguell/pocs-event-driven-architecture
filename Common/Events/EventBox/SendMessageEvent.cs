@@ -1,0 +1,9 @@
+﻿namespace Common.Events.EventBox
+{
+    public class SendMessageEvent : Event
+    {
+        public SendMessageEvent(Service.Service colleague) : base(colleague)
+        {
+        }
+    }
+}

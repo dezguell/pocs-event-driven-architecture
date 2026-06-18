@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Common;
 using Common.Events;
+using Common.Events.EventBox;
+using Common.Mediator;
+using Common.Models;
+using Common.Reaction;
+using Common.Service;
 using DataImport.Reactions;
 
 namespace DataImport
@@ -14,20 +20,25 @@ namespace DataImport
             {
                 new SendMessageEvent(this),
                 new AssetCreationResponseEvent(this),
+                new SaveAssetActionCompleteEvent(this),
             }));
 
             this.EventReactionRegistry = new List<EventReaction>()
             {
-                new EventReaction() { Event = new AssetCreationResponseEvent(this), Reaction = new AssetCreationResponseEventReaction(this)},
-                new EventReaction {Event = new SendMessageEvent(this), Reaction = new SendMessageEventEventReaction(this)}
+                new EventReaction {Event = new AssetCreationResponseEvent(this), Reaction = new DataImportReactionToAssetCreationResponseEvent(this)},
+                new EventReaction {Event = new SendMessageEvent(this), Reaction = new DataImportReactionToSendMessageEvent(this)},
+                new EventReaction {Event = new SaveAssetActionCompleteEvent(this),Reaction = new DataImportReactionToSaveAssetActionCompleteEvent(this)}
+
             };
         }
 
-        public void SendAssetCreationRequest()
+        public void SendAssetCreationRequest(Guid id, string assettypevalue, int cost)
         {
             // create asset logic 
+            var asset = new Asset(id, assettypevalue, cost);
 
-            mediator.Interact(new AssetCreationRequestEvent(this));
+            //Interaction with the mediator exposing the asset creation envent
+            mediator.Interact(new AssetCreationRequestEvent(this, asset));
         }
     }
 }
