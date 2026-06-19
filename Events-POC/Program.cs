@@ -1,5 +1,6 @@
 ﻿using Asset;
 using Book;
+using Common.Service;
 using DataImport;
 using LocalMediator;
 
@@ -12,6 +13,13 @@ namespace Events_POC
         private static readonly BookService bookService = new(mediator);
         private static readonly DataImportService dataImportService = new(mediator);
 
+        private static readonly (string serviceName, Action<string> send)[] services =
+        [
+            ("AssetService", assetService.SendMessage),
+            ("BookService", bookService.SendMessage),
+            ("DataImportService", dataImportService.SendMessage)
+        ];
+
         static void Main(string[] args)
         {
             SendMessages();
@@ -22,12 +30,7 @@ namespace Events_POC
         private static void SendMessages()
         {
             Console.WriteLine("Sending Messages: ");
-            foreach (var (typeName, send) in new (string, Action<string>)[]
-            {
-                (assetService.GetType().Name,      assetService.SendMessage),
-                (bookService.GetType().Name,       bookService.SendMessage),
-                (dataImportService.GetType().Name, dataImportService.SendMessage),
-            })
+            foreach (var (typeName, send) in services)
             {
                 Console.Write($" -- {typeName}: ");
                 send(Console.ReadLine());
