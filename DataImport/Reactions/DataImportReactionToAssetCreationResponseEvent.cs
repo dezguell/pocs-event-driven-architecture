@@ -10,11 +10,11 @@ namespace DataImport.Reactions
         {
         }
 
-        public override void ReactTo(Event @event)
+        public override void ReactTo(DomainEvent domainEvent)
         {
             Console.WriteLine(" ---- " +
                               $"{this.service.GetType().Name}: Notification of a asset creation...  " +
-                              $"this action was perform by: {@event.PublisherName} ");
+                              $"this action was perform by: {domainEvent.PublisherName} ");
         }
     }
 }

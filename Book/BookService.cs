@@ -1,4 +1,5 @@
-﻿using Book.Reactions;
+﻿using Asset.Events;
+using Book.Reactions;
 using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
@@ -12,11 +13,10 @@ namespace Book
         {
             RegisterReactions(new List<EventReaction>
             {
-                new() { EventType = typeof(AssetCreationResponseEvent), Reaction = new BookReactionToAssetCreationResponseEvent(this) },
-                new() { EventType = typeof(SendMessageEvent),           Reaction = new BookReactionToSendEvent(this) }
+                new() { EventType = typeof(AssetCreationResponseEvent), Handler = new BookReactionToAssetCreationResponseEvent(this) },
+                new() { EventType = typeof(SendMessageEvent),           Handler = new BookReactionToSendEvent(this) }
             });
         }
 
-        public void SendMessage(string message) => Interact(new SendMessageEvent(message));
     }
 }

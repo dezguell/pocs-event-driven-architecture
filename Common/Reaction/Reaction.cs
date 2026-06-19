@@ -11,6 +11,6 @@ namespace Common.Reaction
             this.service = service;
         }
 
-        public abstract void ReactTo(Event @event);
+        public abstract void ReactTo(DomainEvent domainEvent);
     }
 }

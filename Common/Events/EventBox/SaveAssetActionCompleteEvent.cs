@@ -1,6 +1,6 @@
 ﻿namespace Common.Events.EventBox
 {
-    public class SaveAssetActionCompleteEvent : Event
+    public class SaveAssetActionCompleteEvent : DomainEvent
     {
     }
 }

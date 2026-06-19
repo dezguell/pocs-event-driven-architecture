@@ -13,11 +13,10 @@ namespace Asset
         {
             RegisterReactions(new List<EventReaction>
             {
-                new() { EventType = typeof(AssetCreationRequestEvent), Reaction = new AssetReactionToCreationRequestEvent(this) },
-                new() { EventType = typeof(SendMessageEvent),          Reaction = new AssetReactionToSendMessageEvent(this) }
+                new() { EventType = typeof(AssetCreationRequestEvent), Handler = new AssetReactionToCreationRequestEvent(this) },
+                new() { EventType = typeof(SendMessageEvent),          Handler = new AssetReactionToSendMessageEvent(this) }
             });
         }
 
-        public void SendMessage(string message) => Interact(new SendMessageEvent(message));
     }
 }

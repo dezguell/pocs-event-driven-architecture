@@ -1,8 +1,8 @@
 ﻿using Asset;
 using Book;
-using Common.Service;
+using Common.Events.EventBox;
+using Common.Mediator;
 using DataImport;
-using LocalMediator;
 
 namespace Events_POC
 {
@@ -15,9 +15,9 @@ namespace Events_POC
 
         private static readonly (string serviceName, Action<string> send)[] services =
         [
-            ("AssetService", assetService.SendMessage),
-            ("BookService", bookService.SendMessage),
-            ("DataImportService", dataImportService.SendMessage)
+            (assetService.GetType().Name,      assetService.SendMessage),
+            (bookService.GetType().Name,        bookService.SendMessage),
+            (dataImportService.GetType().Name,  dataImportService.SendMessage)
         ];
 
         static void Main(string[] args)

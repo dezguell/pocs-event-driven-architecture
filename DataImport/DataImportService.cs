@@ -1,6 +1,6 @@
 ﻿using Asset.Events;
+using Asset.Models;
 using Common.Events.EventBox;
-using AssetModel = Asset.Models.Asset;
 using Common.Mediator;
 using Common.Reaction;
 using Common.Service;
@@ -14,17 +14,15 @@ namespace DataImport
         {
             RegisterReactions(new List<EventReaction>
             {
-                new() { EventType = typeof(AssetCreationResponseEvent),   Reaction = new DataImportReactionToAssetCreationResponseEvent(this) },
-                new() { EventType = typeof(SendMessageEvent),             Reaction = new DataImportReactionToSendMessageEvent(this) },
-                new() { EventType = typeof(SaveAssetActionCompleteEvent), Reaction = new DataImportReactionToSaveAssetActionCompleteEvent(this) }
+                new() { EventType = typeof(AssetCreationResponseEvent),   Handler = new DataImportReactionToAssetCreationResponseEvent(this) },
+                new() { EventType = typeof(SendMessageEvent),             Handler = new DataImportReactionToSendMessageEvent(this) },
+                new() { EventType = typeof(SaveAssetActionCompleteEvent), Handler = new DataImportReactionToSaveAssetActionCompleteEvent(this) }
             });
         }
 
-        public void SendMessage(string message) => Interact(new SendMessageEvent(message));
-
         public void SendAssetCreationRequest(Guid id, string assetTypeValue, int cost)
         {
-            var asset = new AssetModel(id, assetTypeValue, cost);
+            var asset = new AssetData(id, assetTypeValue, cost);
             Interact(new AssetCreationRequestEvent(asset));
         }
     }

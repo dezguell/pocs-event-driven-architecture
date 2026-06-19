@@ -8,7 +8,7 @@ namespace Common.Service
     {
         private readonly IMediator mediator;
 
-        protected List<EventReaction> EventReactionRegistry { get; private set; }
+        private List<EventReaction> _reactions;
 
         protected Service(IMediator mediator)
         {
@@ -17,22 +17,28 @@ namespace Common.Service
 
         protected void RegisterReactions(IEnumerable<EventReaction> reactions)
         {
-            EventReactionRegistry = reactions.ToList();
-            mediator.Subscribe(this, EventReactionRegistry.Select(r => r.EventType).ToArray());
+            _reactions = [.. reactions];
+
+            var invalid = _reactions.Where(r => !typeof(DomainEvent).IsAssignableFrom(r.EventType)).ToList();
+            if (invalid.Count > 0)
+                throw new ArgumentException(
+                    $"EventType must be a DomainEvent subtype. Invalid: {string.Join(", ", invalid.Select(r => r.EventType.Name))}");
+
+            mediator.Subscribe(this, [.. _reactions.Select(r => r.EventType)]);
         }
 
-        public void ReactTo(Event @event)
+        internal void ReactTo(DomainEvent domainEvent)
         {
-            foreach (var er in EventReactionRegistry.Where(r => r.EventType == @event.GetType()))
+            foreach (var er in _reactions.Where(r => r.EventType == domainEvent.GetType()))
             {
-                er.Reaction.ReactTo(@event);
+                er.Handler.ReactTo(domainEvent);
             }
         }
 
-        public void Interact(Event @event)
+        public void Interact(DomainEvent domainEvent)
         {
-            @event.PublisherName = GetType().Name;
-            mediator.Interact(@event, this);
+            domainEvent.PublisherName = GetType().Name;
+            mediator.Interact(domainEvent, this);
         }
     }
 }

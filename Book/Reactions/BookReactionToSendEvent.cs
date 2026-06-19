@@ -11,13 +11,13 @@ namespace Book.Reactions
         {
         }
 
-        public override void ReactTo(Event @event)
+        public override void ReactTo(DomainEvent domainEvent)
         {
-            var message = (@event as SendMessageEvent)?.Message;
+            var message = (domainEvent as SendMessageEvent)?.Message;
             Console.WriteLine(" ---- " +
                               $"{this.GetType().Name} " +
-                              $"was notified of: {@event.GetType().Name} " +
-                              $"from: {@event.PublisherName} " +
+                              $"was notified of: {domainEvent.GetType().Name} " +
+                              $"from: {domainEvent.PublisherName} " +
                               $"with content: {message}\n");
         }
     }

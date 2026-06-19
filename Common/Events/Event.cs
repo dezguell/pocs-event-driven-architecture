@@ -1,6 +1,6 @@
 ﻿namespace Common.Events
 {
-    public abstract class Event
+    public abstract class DomainEvent
     {
         public string PublisherName { get; internal set; }
     }

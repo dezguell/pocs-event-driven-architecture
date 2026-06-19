@@ -1,6 +1,6 @@
 ﻿namespace Common.Events.EventBox
 {
-    public class SendMessageEvent : Event
+    public class SendMessageEvent : DomainEvent
     {
         public string Message { get; }
 

@@ -1,8 +1,4 @@
-﻿using Common.Events;
-using Common.Mediator;
-using Common.Service;
-
-namespace LocalMediator
+﻿namespace LocalMediator
 {
     public class Mediator : IMediator
     {

@@ -1,5 +1,5 @@
-﻿using Common.Events;
-using Common.Events.EventBox;
+﻿using Asset.Events;
+using Common.Events;
 using Common.Reaction;
 using Common.Service;
 
@@ -11,13 +11,11 @@ namespace Book.Reactions
         {
         }
 
-        public override void ReactTo(Event @event)
+        public override void ReactTo(DomainEvent domainEvent)
         {
             Console.WriteLine(" ---- " +
-                              $"{this.service.GetType().Name}: Saving a asset... " +
-                              $"this action was requested by: {@event.PublisherName} ");
-
-            this.service.Interact(new SaveAssetActionCompleteEvent());
+                              $"{this.service.GetType().Name}: Received asset creation notification " +
+                              $"from: {domainEvent.PublisherName} ");
         }
     }
 }
