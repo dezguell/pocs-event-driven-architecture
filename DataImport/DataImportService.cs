@@ -10,14 +10,29 @@ namespace DataImport
 {
     public class DataImportService : Service
     {
-        public DataImportService(IMediator mediator) : base(mediator)
+        public DataImportService(IMediator mediator)
+            : base(mediator)
         {
-            RegisterReactions(new List<EventReaction>
-            {
-                new() { EventType = typeof(AssetCreationResponseEvent),   Handler = new DataImportReactionToAssetCreationResponseEvent(this) },
-                new() { EventType = typeof(SendMessageEvent),             Handler = new DataImportReactionToSendMessageEvent(this) },
-                new() { EventType = typeof(SaveAssetActionCompleteEvent), Handler = new DataImportReactionToSaveAssetActionCompleteEvent(this) }
-            });
+            RegisterReactions(
+                new List<EventReaction>
+                {
+                    new()
+                    {
+                        EventType = typeof(AssetCreationResponseEvent),
+                        Handler = new DataImportReactionToAssetCreationResponseEvent(this),
+                    },
+                    new()
+                    {
+                        EventType = typeof(SendMessageEvent),
+                        Handler = new DataImportReactionToSendMessageEvent(this),
+                    },
+                    new()
+                    {
+                        EventType = typeof(SaveAssetActionCompleteEvent),
+                        Handler = new DataImportReactionToSaveAssetActionCompleteEvent(this),
+                    },
+                }
+            );
         }
 
         public void SendAssetCreationRequest(Guid id, string assetTypeValue, int cost)

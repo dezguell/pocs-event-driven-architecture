@@ -4,15 +4,21 @@ namespace Common.Mediator
 {
     public class Mediator : IMediator
     {
-        private readonly Dictionary<Service.Service, HashSet<Type>> _serviceContainer = new();
+        private readonly Dictionary<Service.Service, HashSet<Type>> _serviceContainer = [];
 
         public void Subscribe(Service.Service service, Type[] eventTypes)
         {
             if (!_serviceContainer.TryGetValue(service, out var existing))
-                _serviceContainer.Add(service, new HashSet<Type>(eventTypes));
+            {
+                _serviceContainer.Add(service, [.. eventTypes]);
+            }
             else
-                foreach (var type in eventTypes)
-                    existing.Add(type);
+            {
+                foreach (var eventType in eventTypes)
+                {
+                    existing.Add(eventType);
+                }
+            }
         }
 
         public void Interact(DomainEvent domainEvent, Service.Service publisher)
@@ -30,7 +36,8 @@ namespace Common.Mediator
                 catch (Exception ex)
                 {
                     Console.Error.WriteLine(
-                        $"[Mediator] {kvp.Key.GetType().Name} failed reacting to {domainEvent.GetType().Name}: {ex.Message}");
+                        $"[Mediator]: Service {domainEvent.PublisherName} failed reacting to {domainEvent.EventName}: {ex.Message}"
+                    );
                 }
             }
         }

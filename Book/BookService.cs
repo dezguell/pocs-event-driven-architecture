@@ -9,14 +9,24 @@ namespace Book
 {
     public class BookService : Service
     {
-        public BookService(IMediator mediator) : base(mediator)
+        public BookService(IMediator mediator)
+            : base(mediator)
         {
-            RegisterReactions(new List<EventReaction>
-            {
-                new() { EventType = typeof(AssetCreationResponseEvent), Handler = new BookReactionToAssetCreationResponseEvent(this) },
-                new() { EventType = typeof(SendMessageEvent),           Handler = new BookReactionToSendEvent(this) }
-            });
+            RegisterReactions(
+                new List<EventReaction>
+                {
+                    new()
+                    {
+                        EventType = typeof(AssetCreationResponseEvent),
+                        Handler = new BookReactionToAssetCreationResponseEvent(this),
+                    },
+                    new()
+                    {
+                        EventType = typeof(SendMessageEvent),
+                        Handler = new BookReactionToSendEvent(this),
+                    },
+                }
+            );
         }
-
     }
 }

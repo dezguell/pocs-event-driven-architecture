@@ -15,9 +15,9 @@ namespace Events_POC
 
         private static readonly (string serviceName, Action<string> send)[] services =
         [
-            (assetService.GetType().Name,      assetService.SendMessage),
-            (bookService.GetType().Name,        bookService.SendMessage),
-            (dataImportService.GetType().Name,  dataImportService.SendMessage)
+            (assetService.GetType().Name, assetService.SendMessage),
+            (bookService.GetType().Name, bookService.SendMessage),
+            (dataImportService.GetType().Name, dataImportService.SendMessage),
         ];
 
         static void Main(string[] args)

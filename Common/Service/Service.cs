@@ -19,10 +19,13 @@ namespace Common.Service
         {
             _reactions = [.. reactions];
 
-            var invalid = _reactions.Where(r => !typeof(DomainEvent).IsAssignableFrom(r.EventType)).ToList();
+            var invalid = _reactions
+                .Where(r => !typeof(DomainEvent).IsAssignableFrom(r.EventType))
+                .ToList();
             if (invalid.Count > 0)
                 throw new ArgumentException(
-                    $"EventType must be a DomainEvent subtype. Invalid: {string.Join(", ", invalid.Select(r => r.EventType.Name))}");
+                    $"EventType must be a DomainEvent subtype. Invalid: {string.Join(", ", invalid.Select(r => r.EventType.Name))}"
+                );
 
             mediator.Subscribe(this, [.. _reactions.Select(r => r.EventType)]);
         }
