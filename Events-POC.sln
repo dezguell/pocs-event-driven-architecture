@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events-POC", "Events-POC\Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asset", "Asset\Asset.csproj", "{F7555109-3E67-4E20-9063-AA2ADE8B111D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataImport", "DataImpor\DataImport.csproj", "{31229EE9-CBA9-4F19-99BC-3E6C2FB4B975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataImport", "DataImport\DataImport.csproj", "{31229EE9-CBA9-4F19-99BC-3E6C2FB4B975}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{77BABC5D-2A23-4F5D-8E3A-FAFBB749887F}"
 EndProject

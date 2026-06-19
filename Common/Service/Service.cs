@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Common.Events;
+﻿using Common.Events;
 using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
@@ -21,18 +19,18 @@ namespace Common.Service
 
         public string GetMessage()
         {
-            return this.message;
+            return message;
         }
 
         public void SendMessage(string message)
         {
             this.message = message;
-            this.mediator.Interact(new SendMessageEvent(this));
+            mediator.Interact(new SendMessageEvent(this));
         }
 
         public void ReactTo(Event @event)
         {
-            foreach (var eventReaction in this.EventReactionRegistry.Where(reaction => reaction.Event.GetType().Name == @event.GetType().Name))
+            foreach (var eventReaction in EventReactionRegistry.Where(reaction => reaction.Event.GetType() == @event.GetType()))
             {
                 eventReaction.Reaction.ReactTo(@event);
             }

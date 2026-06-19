@@ -4,7 +4,6 @@ using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
 using Common.Service;
-using System.Collections.Generic;
 
 namespace Asset
 {

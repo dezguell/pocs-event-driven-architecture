@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Common.Events;
+﻿using Common.Events;
 
 namespace Common.Mediator
 {

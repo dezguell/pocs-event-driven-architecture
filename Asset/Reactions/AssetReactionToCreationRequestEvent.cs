@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using Common;
+﻿using System.Diagnostics;
 using Common.Events;
 using Common.Events.EventBox;
 using Common.Reaction;

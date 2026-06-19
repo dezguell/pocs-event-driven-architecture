@@ -1,9 +1,6 @@
 ﻿using Common.Events;
 using Common.Mediator;
 using Common.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace LocalMediator
 {
@@ -24,7 +21,7 @@ namespace LocalMediator
             }
             else
             {
-                _serviceContainer[service.Key].ToList().AddRange(service.Value);
+                _serviceContainer[service.Key] = _serviceContainer[service.Key].Concat(service.Value).ToArray();
             }
         }
 
@@ -32,8 +29,8 @@ namespace LocalMediator
         {
             var servicesSubscribedToEvent = _serviceContainer
                 .Where(colleague => colleague.Value
-                    .Select(evnt => evnt.GetType().Name)
-                    .Contains(@event.GetType().Name) && colleague.Key != @event.GetService());
+                    .Select(evnt => evnt.GetType())
+                    .Contains(@event.GetType()) && colleague.Key != @event.GetService());
 
             foreach (var service in servicesSubscribedToEvent)
             {
