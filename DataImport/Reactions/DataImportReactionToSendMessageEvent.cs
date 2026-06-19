@@ -1,4 +1,5 @@
 ﻿using Common.Events;
+using Common.Events.EventBox;
 using Common.Reaction;
 using Common.Service;
 
@@ -12,14 +13,12 @@ namespace DataImport.Reactions
 
         public override void ReactTo(Event @event)
         {
-            var colleague = @event.GetService();
+            var message = (@event as SendMessageEvent)?.Message;
             Console.WriteLine(" ---- " +
                               $"{this.service.GetType().Name} " +
                               $"was notified of: {@event.GetType().Name} " +
-                              $"from: {colleague.GetType().Name} " +
-                              $"with content: {colleague.GetMessage()}\n");
+                              $"from: {@event.PublisherName} " +
+                              $"with content: {message}\n");
         }
-
-
     }
 }

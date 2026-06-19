@@ -14,7 +14,7 @@ namespace DataImport.Reactions
         {
             Console.WriteLine(" ---- " +
                               $"{this.service.GetType().Name}: Notification of a asset creation...  " +
-                              $"this action was perform by: {@event.GetService().GetType().Name} ");
+                              $"this action was perform by: {@event.PublisherName} ");
         }
     }
 }

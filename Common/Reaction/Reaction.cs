@@ -4,7 +4,7 @@ namespace Common.Reaction
 {
     public abstract class Reaction
     {
-        protected Service.Service service;
+        protected readonly Service.Service service;
 
         protected Reaction(Service.Service service)
         {

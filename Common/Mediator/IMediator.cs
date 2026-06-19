@@ -4,8 +4,7 @@ namespace Common.Mediator
 {
     public interface IMediator
     {
-        void Subscribe(KeyValuePair<Service.Service, Event[]> colleague);
-        void Interact(Event @event);
-        IEnumerable<Service.Service> GetServices();
+        void Subscribe(Service.Service service, Type[] eventTypes);
+        void Interact(Event @event, Service.Service publisher);
     }
 }

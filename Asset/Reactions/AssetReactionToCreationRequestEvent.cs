@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using Asset.Events;
 using Common.Events;
 using Common.Events.EventBox;
 using Common.Reaction;
 using Common.Service;
+using AssetModel = Asset.Models.Asset;
 
 namespace Asset.Reactions
 {
@@ -14,17 +15,17 @@ namespace Asset.Reactions
 
         public override void ReactTo(Event @event)
         {
-            var asset = (@event as AssetCreationRequestEvent)?.GetAsset();
-            Debug.Assert(asset != null, nameof(asset) + " != null");
-            Console.WriteLine($@" ----{this.service.GetType().Name}: Creating a asset... 
-                 Asset Data: 
-                 ID: {asset._id}
-                 Type: {asset._assetType}
-                 Cost: {asset._cost}
-      this action was requested by: {@event.GetService().GetType().Name} ");
+            var asset = (@event as AssetCreationRequestEvent)?.GetAsset()
+                ?? throw new InvalidOperationException("AssetCreationRequestEvent must carry an asset.");
 
-            this.service.Interact(new AssetCreationResponseEvent(this.service));
+            Console.WriteLine($@" ----{this.service.GetType().Name}: Creating a asset...
+                 Asset Data:
+                 ID: {asset.Id}
+                 Type: {asset.AssetType}
+                 Cost: {asset.Cost}
+      this action was requested by: {@event.PublisherName} ");
+
+            this.service.Interact(new AssetCreationResponseEvent());
         }
-
     }
 }

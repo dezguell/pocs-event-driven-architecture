@@ -1,5 +1,5 @@
-﻿using Asset.Reactions;
-using Common.Events;
+﻿using Asset.Events;
+using Asset.Reactions;
 using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
@@ -11,17 +11,13 @@ namespace Asset
     {
         public AssetService(IMediator mediator) : base(mediator)
         {
-            this.EventReactionRegistry = new List<EventReaction>()
+            RegisterReactions(new List<EventReaction>
             {
-                new() {Event = new AssetCreationRequestEvent(this,null), Reaction = new AssetReactionToCreationRequestEvent(this)},
-                new() {Event = new SendMessageEvent(this), Reaction = new AssetReactionToSendMessageEvent(this)}
-            };
-
-            mediator.Subscribe(new KeyValuePair<Service, Event[]>(this, new Event[]
-            {
-                new SendMessageEvent(this),
-                new AssetCreationRequestEvent(this,null),
-            }));
+                new() { EventType = typeof(AssetCreationRequestEvent), Reaction = new AssetReactionToCreationRequestEvent(this) },
+                new() { EventType = typeof(SendMessageEvent),          Reaction = new AssetReactionToSendMessageEvent(this) }
+            });
         }
+
+        public void SendMessage(string message) => Interact(new SendMessageEvent(message));
     }
 }

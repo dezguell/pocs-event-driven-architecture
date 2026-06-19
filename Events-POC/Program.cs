@@ -1,6 +1,5 @@
 ﻿using Asset;
 using Book;
-using Common.Mediator;
 using DataImport;
 using LocalMediator;
 
@@ -8,19 +7,14 @@ namespace Events_POC
 {
     class Program
     {
-        // Starting Services 
-        private static IMediator mediator = new Mediator();
-        private static AssetService assetService = new(mediator);
-        private static BookService bookService = new(mediator);
-        private static DataImportService dataImportService = new(mediator);
-
+        private static readonly Mediator mediator = new();
+        private static readonly AssetService assetService = new(mediator);
+        private static readonly BookService bookService = new(mediator);
+        private static readonly DataImportService dataImportService = new(mediator);
 
         static void Main(string[] args)
         {
-            //All services will send a message to the service group
             SendMessages();
-            
-            //The DataImport Service will send a request for persisting a new asset
             SendAssetCreationRequest();
             Console.ReadKey();
         }
@@ -28,10 +22,15 @@ namespace Events_POC
         private static void SendMessages()
         {
             Console.WriteLine("Sending Messages: ");
-            foreach (var service in mediator.GetServices())
+            foreach (var (typeName, send) in new (string, Action<string>)[]
             {
-                Console.Write($" -- {service.GetType().Name}: ");
-                service.SendMessage(Console.ReadLine());
+                (assetService.GetType().Name,      assetService.SendMessage),
+                (bookService.GetType().Name,       bookService.SendMessage),
+                (dataImportService.GetType().Name, dataImportService.SendMessage),
+            })
+            {
+                Console.Write($" -- {typeName}: ");
+                send(Console.ReadLine());
                 Console.WriteLine("-----------------------");
             }
         }
@@ -39,7 +38,7 @@ namespace Events_POC
         private static void SendAssetCreationRequest()
         {
             Console.WriteLine("Sending assetCreation Requests : ");
-            dataImportService.SendAssetCreationRequest(Guid.NewGuid(),"assetTypeValue", 3000);
+            dataImportService.SendAssetCreationRequest(Guid.NewGuid(), "assetTypeValue", 3000);
         }
     }
 }

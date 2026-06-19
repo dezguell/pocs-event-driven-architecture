@@ -15,9 +15,9 @@ namespace Book.Reactions
         {
             Console.WriteLine(" ---- " +
                               $"{this.service.GetType().Name}: Saving a asset... " +
-                              $"this action was requested by: {@event.GetService().GetType().Name} ");
+                              $"this action was requested by: {@event.PublisherName} ");
 
-            this.service.Interact(new SaveAssetActionCompleteEvent(this.service));
+            this.service.Interact(new SaveAssetActionCompleteEvent());
         }
     }
 }

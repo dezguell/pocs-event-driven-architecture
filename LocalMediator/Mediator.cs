@@ -6,41 +6,35 @@ namespace LocalMediator
 {
     public class Mediator : IMediator
     {
-        private readonly Dictionary<Service, Event[]> _serviceContainer;
+        private readonly Dictionary<Service, HashSet<Type>> _serviceContainer;
 
         public Mediator()
         {
-            _serviceContainer = new Dictionary<Service, Event[]>();
+            _serviceContainer = new Dictionary<Service, HashSet<Type>>();
         }
 
-        public void Subscribe(KeyValuePair<Service, Event[]> service)
+        public void Subscribe(Service service, Type[] eventTypes)
         {
-            if (!_serviceContainer.ContainsKey(service.Key))
+            if (!_serviceContainer.ContainsKey(service))
             {
-                _serviceContainer.Add(service.Key, service.Value);
+                _serviceContainer.Add(service, new HashSet<Type>(eventTypes));
             }
             else
             {
-                _serviceContainer[service.Key] = _serviceContainer[service.Key].Concat(service.Value).ToArray();
+                foreach (var type in eventTypes)
+                    _serviceContainer[service].Add(type);
             }
         }
 
-        public void Interact(Event @event)
+        public void Interact(Event @event, Service publisher)
         {
-            var servicesSubscribedToEvent = _serviceContainer
-                .Where(colleague => colleague.Value
-                    .Select(_event => _event.GetType())
-                    .Contains(@event.GetType()) && colleague.Key != @event.GetService());
+            var subscribed = _serviceContainer
+                .Where(kvp => kvp.Value.Contains(@event.GetType()) && kvp.Key != publisher);
 
-            foreach (var service in servicesSubscribedToEvent)
+            foreach (var kvp in subscribed)
             {
-                service.Key.ReactTo(@event);
+                kvp.Key.ReactTo(@event);
             }
-        }
-
-        public IEnumerable<Service> GetServices()
-        {
-            return this._serviceContainer.Keys;
         }
     }
 }

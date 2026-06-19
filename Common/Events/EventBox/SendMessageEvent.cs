@@ -2,8 +2,11 @@
 {
     public class SendMessageEvent : Event
     {
-        public SendMessageEvent(Service.Service colleague) : base(colleague)
+        public string Message { get; }
+
+        public SendMessageEvent(string message)
         {
+            Message = message;
         }
     }
 }

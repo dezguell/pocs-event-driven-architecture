@@ -1,10 +1,8 @@
-﻿using Common.Events;
-
-namespace Common.Reaction
+﻿namespace Common.Reaction
 {
     public class EventReaction
     {
-        public Event @Event;
-        public Reaction Reaction;
+        public required Type EventType { get; init; }
+        public required Reaction Reaction { get; init; }
     }
 }

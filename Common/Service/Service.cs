@@ -1,5 +1,4 @@
 ﻿using Common.Events;
-using Common.Events.EventBox;
 using Common.Mediator;
 using Common.Reaction;
 
@@ -7,39 +6,33 @@ namespace Common.Service
 {
     public abstract class Service
     {
-        protected IMediator mediator;
-        protected string message;
+        private readonly IMediator mediator;
 
-        protected List<EventReaction> EventReactionRegistry { get; set; }
+        protected List<EventReaction> EventReactionRegistry { get; private set; }
 
         protected Service(IMediator mediator)
         {
             this.mediator = mediator;
         }
 
-        public string GetMessage()
+        protected void RegisterReactions(IEnumerable<EventReaction> reactions)
         {
-            return message;
-        }
-
-        public void SendMessage(string message)
-        {
-            this.message = message;
-            mediator.Interact(new SendMessageEvent(this));
+            EventReactionRegistry = reactions.ToList();
+            mediator.Subscribe(this, EventReactionRegistry.Select(r => r.EventType).ToArray());
         }
 
         public void ReactTo(Event @event)
         {
-            foreach (var eventReaction in EventReactionRegistry.Where(reaction => reaction.Event.GetType() == @event.GetType()))
+            foreach (var er in EventReactionRegistry.Where(r => r.EventType == @event.GetType()))
             {
-                eventReaction.Reaction.ReactTo(@event);
+                er.Reaction.ReactTo(@event);
             }
-
         }
 
         public void Interact(Event @event)
         {
-            mediator.Interact(@event);
+            @event.PublisherName = GetType().Name;
+            mediator.Interact(@event, this);
         }
     }
 }
