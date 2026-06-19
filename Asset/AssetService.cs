@@ -13,8 +13,8 @@ namespace Asset
         {
             this.EventReactionRegistry = new List<EventReaction>()
             {
-                new EventReaction {Event = new AssetCreationRequestEvent(this,null), Reaction = new AssetReactionToCreationRequestEvent(this)},
-                new EventReaction {Event = new SendMessageEvent(this), Reaction = new AssetReactionToSendMessageEvent(this)}
+                new() {Event = new AssetCreationRequestEvent(this,null), Reaction = new AssetReactionToCreationRequestEvent(this)},
+                new() {Event = new SendMessageEvent(this), Reaction = new AssetReactionToSendMessageEvent(this)}
             };
 
             mediator.Subscribe(new KeyValuePair<Service, Event[]>(this, new Event[]

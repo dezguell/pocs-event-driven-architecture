@@ -29,7 +29,7 @@ namespace LocalMediator
         {
             var servicesSubscribedToEvent = _serviceContainer
                 .Where(colleague => colleague.Value
-                    .Select(evnt => evnt.GetType())
+                    .Select(_event => _event.GetType())
                     .Contains(@event.GetType()) && colleague.Key != @event.GetService());
 
             foreach (var service in servicesSubscribedToEvent)

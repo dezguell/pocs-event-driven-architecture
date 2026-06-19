@@ -10,9 +10,9 @@ namespace Events_POC
     {
         // Starting Services 
         private static IMediator mediator = new Mediator();
-        private static AssetService AsetService = new AssetService(mediator);
-        private static BookService BookService = new BookService(mediator);
-        private static DataImportService DataImport = new DataImportService(mediator);
+        private static AssetService assetService = new(mediator);
+        private static BookService bookService = new(mediator);
+        private static DataImportService dataImportService = new(mediator);
 
 
         static void Main(string[] args)
@@ -39,7 +39,7 @@ namespace Events_POC
         private static void SendAssetCreationRequest()
         {
             Console.WriteLine("Sending assetCreation Requests : ");
-            DataImport.SendAssetCreationRequest(Guid.NewGuid(),"assetTypeValue", 3000);
+            dataImportService.SendAssetCreationRequest(Guid.NewGuid(),"assetTypeValue", 3000);
         }
     }
 }

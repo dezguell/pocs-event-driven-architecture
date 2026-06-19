@@ -19,8 +19,8 @@ namespace Book
 
             this.EventReactionRegistry = new List<EventReaction>()
             {
-                new EventReaction {Event = new AssetCreationResponseEvent(this),Reaction = new BookReactionToAssetCreationResponseEvent(this)},
-                new EventReaction {Event = new SendMessageEvent(this),Reaction = new BookReactionToSendEvent(this)}
+                new() {Event = new AssetCreationResponseEvent(this),Reaction = new BookReactionToAssetCreationResponseEvent(this)},
+                new() {Event = new SendMessageEvent(this),Reaction = new BookReactionToSendEvent(this)}
             };
         }
     }

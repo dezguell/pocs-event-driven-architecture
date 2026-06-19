@@ -19,7 +19,7 @@ namespace Asset.Reactions
             Console.WriteLine($@" ----{this.service.GetType().Name}: Creating a asset... 
                  Asset Data: 
                  ID: {asset._id}
-                 Type: {asset._assettype}
+                 Type: {asset._assetType}
                  Cost: {asset._cost}
       this action was requested by: {@event.GetService().GetType().Name} ");
 

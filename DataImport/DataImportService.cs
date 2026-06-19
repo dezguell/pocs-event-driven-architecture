@@ -21,19 +21,19 @@ namespace DataImport
 
             this.EventReactionRegistry = new List<EventReaction>()
             {
-                new EventReaction {Event = new AssetCreationResponseEvent(this), Reaction = new DataImportReactionToAssetCreationResponseEvent(this)},
-                new EventReaction {Event = new SendMessageEvent(this), Reaction = new DataImportReactionToSendMessageEvent(this)},
-                new EventReaction {Event = new SaveAssetActionCompleteEvent(this),Reaction = new DataImportReactionToSaveAssetActionCompleteEvent(this)}
+                new() {Event = new AssetCreationResponseEvent(this), Reaction = new DataImportReactionToAssetCreationResponseEvent(this)},
+                new() {Event = new SendMessageEvent(this), Reaction = new DataImportReactionToSendMessageEvent(this)},
+                new() {Event = new SaveAssetActionCompleteEvent(this),Reaction = new DataImportReactionToSaveAssetActionCompleteEvent(this)}
 
             };
         }
 
-        public void SendAssetCreationRequest(Guid id, string assettypevalue, int cost)
+        public void SendAssetCreationRequest(Guid id, string assetTypeValue, int cost)
         {
             // create asset logic 
-            var asset = new Asset(id, assettypevalue, cost);
+            var asset = new Asset(id, assetTypeValue, cost);
 
-            //Interaction with the mediator exposing the asset creation envent
+            //Interaction with the mediator exposing the asset creation event
             mediator.Interact(new AssetCreationRequestEvent(this, asset));
         }
     }
