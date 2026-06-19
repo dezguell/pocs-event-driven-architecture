@@ -7,12 +7,8 @@ using Common.Service;
 
 namespace Asset.Reactions
 {
-    public class AssetReactionToCreationRequestEvent : Reaction
+    public class AssetReactionToCreationRequestEvent(Service service) : Reaction(service)
     {
-        public AssetReactionToCreationRequestEvent(Service service) : base(service)
-        {
-        }
-
         public override void ReactTo(DomainEvent domainEvent)
         {
             var creationRequest = domainEvent as AssetCreationRequestEvent

@@ -5,12 +5,8 @@ using Common.Service;
 
 namespace Asset.Reactions
 {
-    public class AssetReactionToSendMessageEvent : Reaction
+    public class AssetReactionToSendMessageEvent(Service service) : Reaction(service)
     {
-        public AssetReactionToSendMessageEvent(Service service) : base(service)
-        {
-        }
-
         public override void ReactTo(DomainEvent domainEvent)
         {
             var message = (domainEvent as SendMessageEvent)?.Message;

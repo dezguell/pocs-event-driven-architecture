@@ -1,16 +1,9 @@
 namespace Asset.Models
 {
-    public class AssetData
+    public class AssetData(Guid id, string assetType, int cost)
     {
-        public Guid Id { get; }
-        public string AssetType { get; }
-        public int Cost { get; }
-
-        public AssetData(Guid id, string assetType, int cost)
-        {
-            Id = id;
-            AssetType = assetType;
-            Cost = cost;
-        }
+        public Guid Id { get; } = id;
+        public string AssetType { get; } = assetType;
+        public int Cost { get; } = cost;
     }
 }

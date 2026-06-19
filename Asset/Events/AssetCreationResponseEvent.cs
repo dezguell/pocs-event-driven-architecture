@@ -3,13 +3,8 @@ using Common.Events;
 
 namespace Asset.Events
 {
-    public class AssetCreationResponseEvent : DomainEvent
+    public class AssetCreationResponseEvent(AssetData asset) : DomainEvent
     {
-        public AssetData Asset { get; }
-
-        public AssetCreationResponseEvent(AssetData asset)
-        {
-            Asset = asset;
-        }
+        public AssetData Asset { get; } = asset;
     }
 }
